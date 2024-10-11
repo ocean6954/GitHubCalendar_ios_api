@@ -1,13 +1,13 @@
 require "test_helper"
 
-class WeeksControllerTest < ActionDispatch::IntegrationTest
+class ContributionsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get weeks_index_url
+    get contributions_index_url
     assert_response :success
   end
 
   test "should get create" do
-    get weeks_create_url
+    get contributions_create_url
     assert_response :success
   end
 end

@@ -48,3 +48,4 @@ group :development do
 end
 
 gem 'jwt'
+gem 'rack-cors'

@@ -10,25 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_11_133938) do
-  create_table "contirbutions", force: :cascade do |t|
-    t.string "user_name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "days", force: :cascade do |t|
-    t.date "contribution_day", null: false
-    t.integer "contribution_count", null: false
-    t.integer "week_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "weeks", force: :cascade do |t|
-    t.date "start_date", null: false
-    t.date "end_date", null: false
-    t.integer "contribution_id", null: false
+ActiveRecord::Schema[7.1].define(version: 2024_10_11_182406) do
+  create_table "contributions", force: :cascade do |t|
+    t.date "date"
+    t.integer "contribution_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
