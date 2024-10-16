@@ -5,5 +5,11 @@ module Api
       @contributions = Contribution.all.order(date: :asc) # 日付順に全てのContributionを取得
       render json:@contributions
     end
+    def create
+    end
+
+    private
+    def contirbution_params
+    end
   end
 end
