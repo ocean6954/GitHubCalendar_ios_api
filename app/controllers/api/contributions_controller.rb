@@ -9,6 +9,7 @@ module Api
       @contributions = Contribution.all.order(date: :asc) # 日付順に全てのContributionを取得
       render json:@contributions
     end
+
     def create
        puts "\e[38;2;255;165;0mcreateアクションが呼び出されました\e[0m"
       @contribution = Contribution.new(contribution_params)
