@@ -17,7 +17,7 @@ module Api
       if @contribution.save
       render json: @contribution, status: :created
       else
-        puts "\e[38;2;255;165;0mエラーが起きました\e[0m"
+        puts "\e[38;2;255;0;0mエラーが起きました\e[0m"
         render json: @contribution.errors, status: :unprocessable_entity
       end
     end
