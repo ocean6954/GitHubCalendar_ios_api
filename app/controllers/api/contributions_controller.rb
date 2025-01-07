@@ -3,10 +3,8 @@ module Api
   class ContributionsController < ApplicationController
 
     def index
-      # puts "indexアクションが呼び出されました"
       puts "\e[38;2;255;165;0mindexアクションが呼び出されました\e[0m"
-
-      @contributions = Contribution.all.order(date: :asc) # 日付順に全てのContributionを取得
+      @contributions = Contribution.all.order(date: :asc)
       render json:@contributions
     end
 
@@ -21,6 +19,7 @@ module Api
         render json: @contribution.errors, status: :unprocessable_entity
       end
     end
+
 
     private
 
