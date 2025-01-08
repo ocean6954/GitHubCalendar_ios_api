@@ -10,7 +10,9 @@ module Api
 
     def create
        puts "\e[38;2;255;165;0mcreateアクションが呼び出されました\e[0m"
+
       @contribution = Contribution.new(contribution_params)
+      puts Contribution.new
 
       if @contribution.save
       render json: @contribution, status: :created
