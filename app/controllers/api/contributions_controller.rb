@@ -9,16 +9,17 @@ module Api
     end
 
     def create
-       puts "\e[38;2;255;165;0mcreateアクションが呼び出されました\e[0m"
-
+      puts "\e[38;2;255;165;0mcreateアクションが呼び出されました\e[0m"
+      puts "Params: #{params.inspect}"
       @contribution = Contribution.new(contribution_params)
-      puts Contribution.new
 
       if @contribution.save
       render json: @contribution, status: :created
       else
         puts "\e[38;2;255;0;0mエラーが起きました\e[0m"
-        render json: @contribution.errors, status: :unprocessable_entity
+        # render json: @contribution.errors, status: :unprocessable_entity
+        render json: { errors: @item.errors.full_messages }, status: :unprocessable_entity
+
       end
     end
 
