@@ -27,9 +27,8 @@ module Api
     private
 
     def contribution_params
-      puts "受け取ったデータを表示します"
-      puts :contribution
-      params.require(:contribution).permit(:date, :contribution_count)
+      puts "contribution_paramsの起動"
+      params.require(:contributionDays).permit(:date, :contribution_count)
     end
 
   end
