@@ -36,6 +36,9 @@ module Api
 
       # _json 配列を取得
       contribution_days = params.require(:_json)
+      puts "渡ってきたデータを表示します"
+      puts contribution_days
+
 
       # 配列内のデータをフラットにして必要なキーだけを許可
       contribution_days.flat_map { |entry|
