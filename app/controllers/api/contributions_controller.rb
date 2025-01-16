@@ -26,9 +26,23 @@ module Api
 
     private
 
+    # def contribution_params
+    #   puts "contribution_paramsの起動"
+    #   params.require(:contributionDays).permit(:date, :contribution_count)
+    # end
+
     def contribution_params
       puts "contribution_paramsの起動"
-      params.require(:contributionDays).permit(:date, :contribution_count)
+
+      # _json 配列を取得
+      contribution_days = params.require(:_json)
+
+      # 配列内のデータをフラットにして必要なキーだけを許可
+      contribution_days.flat_map { |entry|
+        entry.require(:contributionDays).map do |day|
+          day.permit(:date, :contributionCount)
+        end
+      }
     end
 
   end
