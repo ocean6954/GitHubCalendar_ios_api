@@ -32,7 +32,7 @@ module Api
     # end
 
     def contribution_params
-      puts "contribution_paramsの起動"
+      puts "contribution_paramsを起動"
 
       # _json 配列を取得
       contribution_days = params.require(:_json)
