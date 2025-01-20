@@ -42,7 +42,9 @@ module Api
 
       # 配列内のデータをフラットにして必要なキーだけを許可
       contribution_days.flat_map { |entry|
+        puts entry
         entry.require(:contributionDays).map do |day|
+          puts day
           day.permit(:date, :contributionCount)
         end
       }
