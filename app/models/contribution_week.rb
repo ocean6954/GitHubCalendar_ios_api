@@ -1,0 +1,2 @@
+class ContributionWeek < ApplicationRecord
+end
